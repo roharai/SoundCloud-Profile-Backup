@@ -1,2 +1,0 @@
-<?php
-$client_id = '';
