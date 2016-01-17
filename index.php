@@ -34,10 +34,9 @@ if (isset($_GET['username'])) {
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 		<style>
-		.center {
-			text-align: center;
-		}
 		.spinner {
 		  display: inline-block;
 		  opacity: 0;
@@ -73,6 +72,39 @@ if (isset($_GET['username'])) {
 		.has-spinner.btn-large.active .spinner {
 		    width: 19px;
 		}
+		.glyphicon-refresh-animate {
+		    -animation: spin .7s infinite linear;
+		    -ms-animation: spin .7s infinite linear;
+		    -webkit-animation: spinw .7s infinite linear;
+		    -moz-animation: spinm .7s infinite linear;
+		}
+
+		@keyframes spin {
+		    from {
+		        transform: scale(1) rotate(0deg);
+		    }
+		    to {
+		        transform: scale(1) rotate(360deg);
+		    }
+		}
+
+		@-webkit-keyframes spinw {
+		    from {
+		        -webkit-transform: rotate(0deg);
+		    }
+		    to {
+		        -webkit-transform: rotate(360deg);
+		    }
+		}
+
+		@-moz-keyframes spinm {
+		    from {
+		        -moz-transform: rotate(0deg);
+		    }
+		    to {
+		        -moz-transform: rotate(360deg);
+		    }
+		}
 		</style>
 	</head>
 	<body>
@@ -90,7 +122,7 @@ if (isset($_GET['username'])) {
 									<input name="username" type="text" class="form-control" />
 									<span class="input-group-btn">
 										<button class="btn btn-primary has-spinner" id="go" type="submit">
-										<span class="spinner"><i class="icon-spin icon-refresh"></i></span>Go!</button>
+										<span class="spinner"><i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i></span> Go!</button>
 									</span>
 								</form>
 							</div><!-- /.col-lg-4 -->
