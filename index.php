@@ -7,6 +7,8 @@ ini_set('display_errors', 0);
 
 if (isset($_GET['username'])) {
 
+	header('Content-Type: application/json');
+
 	$username = $_GET['username'];
 	$username_data = (json_decode(file_get_contents("http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/$username&client_id=$client_id")));
 	$user_id = $username_data->id;
@@ -18,7 +20,7 @@ if (isset($_GET['username'])) {
 
 	$data = array('username' => $username, 'user id' => $user_id, 'tracks' => $user_tracks, 'followers' => $user_followers, 'following' => $user_followings, 'favorites' => $user_favorites);
 
-	echo htmlentities(json_encode($data));
+	echo json_encode($data);
 
 } else {
 	?>
