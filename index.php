@@ -11,14 +11,14 @@ if (isset($_GET['username'])) {
 	$username_data = (json_decode(file_get_contents("http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/$username&client_id=$client_id")));
 	$user_id = $username_data->id;
 
-	$user_tracks = (json_decode(file_get_contents("http://api.soundcloud.com/users/$user_id/tracks?limit=10000&client_id=$client_id"), true));
+	$user_tracks = json_decode(file_get_contents("http://api.soundcloud.com/users/$user_id/tracks?limit=10000&client_id=$client_id"), true);
 	$user_followers = json_decode(file_get_contents("http://api.soundcloud.com/users/$user_id/followers?limit=10000&client_id=$client_id"), true)['collection'];
 	$user_followings = json_decode(file_get_contents("http://api.soundcloud.com/users/$user_id/followings?limit=10000&client_id=$client_id"), true)['collection'];
 	$user_favorites = json_decode(file_get_contents("http://api.soundcloud.com/users/$user_id/favorites?limit=10000&client_id=$client_id"), true);
 
 	$data = array('username' => $username, 'user id' => $user_id, 'tracks' => $user_tracks, 'followers' => $user_followers, 'following' => $user_followings, 'favorites' => $user_favorites);
 
-	echo json_encode($data);
+	echo htmlentities(json_encode($data));
 
 } else {
 	?>
