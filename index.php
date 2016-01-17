@@ -119,7 +119,7 @@ if (isset($_GET['username'])) {
 					<div class="row">
 						<div class="col-lg-4 col-lg-offset-4">
 								<form method="get" class="input-group">
-									<input name="username" type="text" class="form-control" />
+									<input id="input" name="username" type="text" class="form-control" />
 									<span class="input-group-btn">
 										<button class="btn btn-primary has-spinner" id="go" type="submit">
 										<span class="spinner"><i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i></span> Go!</button>
@@ -149,6 +149,7 @@ if (isset($_GET['username'])) {
 			        $(this).toggleClass('active');
 			    });
 			});
+			$("#input").focus();
 		</script>
 	</body>
 </html>
