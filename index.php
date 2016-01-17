@@ -112,7 +112,7 @@ if (isset($_GET['username'])) {
 			<div class="container container-fluid text-center">
 				<h1>Soundcloud Profile Backup</h1>
 				<em>Simply type in a username press Go!</em><br>
-				<em>By using this service, you agree to the <a href="https://github.com/onlineth/SoundCloud-Profile-Backup/blob/master/LICENSE">license</a>
+				<em>By using this service, you agree to the <a href="https://github.com/onlineth/SoundCloud-Profile-Backup/blob/master/LICENSE">license</a></em>
 				<br>
 				<br>
 				<label>Soundcloud Username:</label>
