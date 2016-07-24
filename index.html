@@ -20,23 +20,156 @@
 
     <section class="main-content">
       <h1>
-<a id="soundcloud-profile-backup" class="anchor" href="#soundcloud-profile-backup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SoundCloud-Profile-Backup</h1>
+<a id="soundcloud-profile-backup" class="anchor" href="#soundcloud-profile-backup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://soundcloud.onlineth.com/">SoundCloud Profile Backup</a>
+</h1>
 
-<p>A simple php script to display information about a SoundCloud account in JSON format</p>
+<p><img src="https://i.imgur.com/8GczFjr.png" alt="Soundcloud Profile Backup UI"></p>
 
-<p><img src="https://i.imgur.com/NnDAOwa.png" alt="Soundcloud Profile Backup UI"></p>
+<p>The original purpose of this script was in answer to <a href="http://softwarerecs.stackexchange.com/a/27700/133">this question</a> on the Software Recommendations Stack Exchange. It can be used to backup your profile so you can keep a local copy of the information on your own system as well as providing a simple API for other projects to retrieve a lot of information about other profiles without having to use the SoundCloud API. This script uses JSON as the output format, it is organized and easy to view using a JSON Viewer such as JSONView (Available on <a href="https://addons.mozilla.org/en-us/firefox/addon/jsonview/">Mozilla</a> and <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">Chrome</a>) or using <a href="http://www.jsoneditoronline.org/">JSON Editor Online</a>.</p>
 
-<h4>
-<a id="i-recommend-using-jsonview-available-on-mozilla-and-chrome-or-using-json-editor-online" class="anchor" href="#i-recommend-using-jsonview-available-on-mozilla-and-chrome-or-using-json-editor-online" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I recommend using JSONView (Available on <a href="https://addons.mozilla.org/en-us/firefox/addon/jsonview/">Mozilla</a> and <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">Chrome</a>) or using <a href="http://www.jsoneditoronline.org/">JSON Editor Online</a>
-</h4>
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
 
-<h5>
-<a id="licensed-under-the-gnu-affero-general-public-license" class="anchor" href="#licensed-under-the-gnu-affero-general-public-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/onlineth/SoundCloud-Profile-Backup/blob/master/LICENSE">Licensed under the GNU AFFERO GENERAL PUBLIC LICENSE</a>
-</h5>
+<p>If you'd like to run a local copy of this project on your system, follow this guide.</p>
 
-<hr>
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
 
-<p>Note: The secure.php file is just a place for the <code>$client_id</code> variable which was given from SoundCloud's Developer App Dashboard</p>
+<ul>
+<li>Apache (or apache based) web server</li>
+<li>PHP 5.4 or higher</li>
+</ul>
+
+<h3>
+<a id="guide" class="anchor" href="#guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Guide</h3>
+
+<ol>
+<li>Clone the repo: <code>git clone https://github.com/onlineth/SoundCloud-Profile-Backup.git</code>
+</li>
+<li>Edit the <code>secure.sample.php</code> file by adding your SoundCloud API Key</li>
+<li>Rename that file to <code>secure.php</code>
+</li>
+</ol>
+
+<p>Your up and running</p>
+
+<h2>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output</h2>
+
+<p>The output once again is in json and looks like this:</p>
+
+<pre><code>{
+  username: "onlineth",
+  user id: 146359378,
+  tracks: [ ],
+  followers: [],
+  following: [],
+  favorites: []
+}
+</code></pre>
+
+<p>The Followers and Following section provides detailed informtation about each user. Here is an example output of that:</p>
+
+<pre><code>  {
+  first_name: "Isaac",
+  last_name: "Shepard",
+  full_name: "Isaac Shepard",
+  city: "Orange County",
+  description: "NEW ALBUM: "Christmas Piano" - http://bit.ly/1Rt4CHJ www.isaacshepard.com - Isaac Shepard is a modern pianist and composer who lives in Orange County, California. He has composed and performed for over 25 years, released seven solo piano CD’s, written music for over a dozen video games, and composed hundreds of songs across many genres. Contact: manager@isaacshepard.com For more information and sheet music, please visit Isaac's website: http://www.isaacshepard.com",
+  country: "United States",
+  track_count: 367,
+  public_favorites_count: 0,
+  followers_count: 442,
+  followings_count: 545,
+  plan: "Pro Unlimited",
+  myspace_name: "isaacshepard",
+  discogs_name: null,
+  website_title: "Isaac Shepard - Official Website",
+  website: "http://www.isaacshepard.com",
+  reposts_count: 0,
+  comments_count: 7,
+  online: false,
+  likes_count: 0,
+  playlist_count: 41,
+  avatar_url: "https://i1.sndcdn.com/avatars-000044938681-c7icon-large.jpg",
+  id: 20554957,
+  kind: "user",
+  permalink_url: "http://soundcloud.com/isaacshepard",
+  uri: "https://api.soundcloud.com/users/20554957",
+  username: "IsaacShepard",
+  permalink: "isaacshepard",
+  last_modified: "2016/07/22 19:56:52 +0000"
+  }
+</code></pre>
+
+<p>The favorites as well contains detailed information:</p>
+
+<pre><code>{
+  kind: "track",
+  id: 185449063,
+  created_at: "2015/01/11 00:53:21 +0000",
+  user_id: 21744243,
+  duration: 707591,
+  commentable: true,
+  state: "finished",
+  original_content_size: 28545764,
+  last_modified: "2015/01/11 12:36:40 +0000",
+  sharing: "public",
+  tag_list: "",
+  permalink: "05-beethoven-symphony-no-9-in",
+  streamable: true,
+  embeddable_by: "all",
+  downloadable: false,
+  purchase_url: null,
+  label_id: null,
+  purchase_title: null,
+  genre: "aspen",
+  title: "05 Beethoven Symphony No. 9 In D Minor, Op. 125 Choral II Scherzo Molto Vivace–Presto",
+  description: "",
+  label_name: null,
+  release: null,
+  track_type: null,
+  key_signature: null,
+  isrc: null,
+  video_url: null,
+  bpm: null,
+  release_year: null,
+  release_month: null,
+  release_day: null,
+  original_format: "mp3",
+  license: "all-rights-reserved",
+  uri: "https://api.soundcloud.com/tracks/185449063",
+  user: {
+    id: 21744243,
+    kind: "user",
+    permalink: "computereasy",
+    username: "Computer (Easy)",
+    last_modified: "2015/01/11 00:35:51 +0000",
+    uri: "https://api.soundcloud.com/users/21744243",
+    permalink_url: "http://soundcloud.com/computereasy",
+    avatar_url: "https://a1.sndcdn.com/images/default_avatar_large.png"
+  },
+  permalink_url: "http://soundcloud.com/computereasy/05-beethoven-symphony-no-9-in",
+  artwork_url: null,
+  waveform_url: "https://w1.sndcdn.com/0GkcIbPEf9fe_m.png",
+  stream_url: "https://api.soundcloud.com/tracks/185449063/stream",
+  playback_count: 3004,
+  download_count: 0,
+  favoritings_count: 12,
+  comment_count: 0,
+  attachments_uri: "https://api.soundcloud.com/tracks/185449063/attachments"
+}
+</code></pre>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This project is Licensed under the <a href="https://github.com/onlineth/SoundCloud-Profile-Backup/blob/master/LICENSE">GNU AFFERO GENERAL PUBLIC LICENSE</a>. You agree to it by useing this service and/or using this project. You accept all responsibiliy and I accept no liability to your actions with this project.</p>
+
+<h2>
+<a id="bug-reportsfeature-requests" class="anchor" href="#bug-reportsfeature-requests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug Reports/Feature Requests</h2>
+
+<p>Head on over to the <a href="https://github.com/onlineth/SoundCloud-Profile-Backup/issues">issue tracker</a> and open an issue. Please be detailed in your issue or feature request.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/onlineth/SoundCloud-Profile-Backup">Soundcloud Profile Backup</a> is maintained by <a href="https://github.com/onlineth">onlineth</a>.</span>
