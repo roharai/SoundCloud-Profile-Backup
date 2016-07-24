@@ -4,6 +4,8 @@
 
 The original purpose of this script was in answer to [this question](http://softwarerecs.stackexchange.com/a/27700/133) on the Software Recommendations Stack Exchange. It can be used to backup your profile so you can keep a local copy of the information on your own system as well as providing a simple API for other projects to retrieve a lot of information about other profiles without having to use the SoundCloud API. This script uses JSON as the output format, it is organized and easy to view using a JSON Viewer such as JSONView (Available on [Mozilla](https://addons.mozilla.org/en-us/firefox/addon/jsonview/) and [Chrome](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en)) or using [JSON Editor Online](http://www.jsoneditoronline.org/).
 
+You may set this project on your own or use the [one running here](https://soundcloud.onlineth.com/).
+
 ## Setup
 
 If you'd like to run a local copy of this project on your system, follow this guide.
