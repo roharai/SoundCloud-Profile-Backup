@@ -1,0 +1,6 @@
+{
+  "name": "Soundcloud Profile Backup",
+  "tagline": "A simple php script to display information about a SoundCloud account in JSON format",
+  "body": "# SoundCloud-Profile-Backup\r\nA simple php script to display information about a SoundCloud account in JSON format\r\n\r\n![Soundcloud Profile Backup UI][1]\r\n\r\n#### I recommend using JSONView (Available on [Mozilla](https://addons.mozilla.org/en-us/firefox/addon/jsonview/) and [Chrome](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en)) or using [JSON Editor Online](http://www.jsoneditoronline.org/)\r\n\r\n##### [Licensed under the GNU AFFERO GENERAL PUBLIC LICENSE](https://github.com/onlineth/SoundCloud-Profile-Backup/blob/master/LICENSE)\r\n\r\n---\r\nNote: The secure.php file is just a place for the `$client_id` variable which was given from SoundCloud's Developer App Dashboard\r\n\r\n  [1]: https://i.imgur.com/NnDAOwa.png\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
