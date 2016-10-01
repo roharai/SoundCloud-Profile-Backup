@@ -152,7 +152,7 @@ if (isset($_GET['username'])) {
 			});
 			$("#input").focus();
 		</script>
-		<img src="https://analytics.onlineth.com/js/?idsite=2&rec=1" style="border:0" alt="" />
+		<img src="https://stats.onlineth.com/js/?idsite=4&rec=1" style="border:0" alt="" />
 	</body>
 </html>
 <?php
