@@ -6,6 +6,8 @@ You may set this project on your own or **use the [one running here](https://sou
 
 ## Setup
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bd84f257039a436f972162f49e1d7b1d)](https://www.codacy.com/app/online/SoundCloud-Profile-Backup?utm_source=github.com&utm_medium=referral&utm_content=onlineth/SoundCloud-Profile-Backup&utm_campaign=badger)
+
 If you'd like to run a local copy of this project on your system, follow this guide.
 
 ### Requirements
